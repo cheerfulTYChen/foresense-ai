@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
             'contact': '聯絡我們',
             'company_title': '夆泩數位發展',
             'company_slogan': '專業、創新、信賴的夥伴',
-            'about_content': '夆泩數位發展(ForeSence Tech)專注於數位創新與企業成長,結合專業顧問、技術研發與客製化解決方案,協助客戶在數位時代中脫穎而出。',
+            'about_content': '夆泩數位發展(ForeSense Tech)專注於數位創新與企業成長,結合專業顧問、技術研發與客製化解決方案,協助客戶在數位時代中脫穎而出。',
             'about_point1_title': '專業顧問團隊',
             'about_point1': '我們擁有經驗豐富的顧問團隊,深入了解各產業特性與市場趨勢,為每位客戶量身打造最適合的數位轉型策略,確保方案契合企業需求與發展目標。',
             'about_point2_title': '跨領域技術整合',
@@ -230,9 +230,9 @@ document.addEventListener("DOMContentLoaded", function () {
             'service': 'Services',
             'industry_applications': 'Industry Applications', // 新增
             'contact': 'Contact Us',
-            'company_title': 'ForeSence Tech',
+            'company_title': 'ForeSense Tech',
             'company_slogan': 'Professional, Innovative, Trusted Partner',
-            'about_content': 'ForeSence Tech focuses on digital innovation and business growth, combining professional consulting, technology development, and customized solutions to help clients stand out in the digital era.',
+            'about_content': 'ForeSense Tech focuses on digital innovation and business growth, combining professional consulting, technology development, and customized solutions to help clients stand out in the digital era.',
             'about_point1_title': 'Professional Consulting Team',
             'about_point1': 'We have experienced consultants who deeply understand industry trends and create customized digital transformation strategies that align with each client\'s needs and development goals.',
             'about_point2_title': 'Cross-Domain Technology Integration',
@@ -270,7 +270,7 @@ document.addEventListener("DOMContentLoaded", function () {
             'email': 'foresense0729@gmail.com',
             'service_time_label': 'Service Time:',
             'service_time': 'Mon-Fri 9:00-18:00',
-            'footer': 'Copyright © 2025 ForeSence Tech',
+            'footer': 'Copyright © 2025 ForeSense Tech',
             
             // 產業應用場景 (Industry Applications) 新增的鍵值對
             'industry_applications_title': 'Smart Process Solutions Across Industries',
