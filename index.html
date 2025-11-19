@@ -1,431 +1,756 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-TW" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>夆泩數位發展</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夆泩數位發展 ForeSence Tech</title>
+
+    <!-- Tailwind CDN（保留超方便的 utility） -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- 自訂 CSS -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <!-- LottieFiles 動態 JSON -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg bg-white shadow-sm rounded-4 mt-3 mb-4 px-3 py-2" style="border:1px solid #e2e8f0;">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#" data-i18n="company_title">夆泩數位發展</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#" data-i18n="home">首頁</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#service-section" data-i18n="service">服務項目</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#industry-applications-section" data-i18n="industry_applications">產業應用</a></li><li class="nav-item"><a class="nav-link" href="#about-section" data-i18n="about">關於我們</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact-section" data-i18n="contact">聯絡我們</a></li>
-                </ul
-                <div class="d-flex">
-                    <button class="btn btn-outline-primary me-2 lang-switch" data-lang="zh-TW">繁體中文</button>
-                    <button class="btn btn-outline-secondary lang-switch" data-lang="en">English</button>
+<body class="bg-black text-white overflow-x-hidden">
+
+    <!-- 粒子背景 -->
+    <div id="particles-js"></div>
+
+    <!-- 這裡放你原本的 <nav>、<header>、所有 <section> -->
+    <!-- Navbar -->
+    <!-- 1. Header：砍掉多餘內距 + 把公司名稱移回左邊 -->
+    <nav class="fixed top-0 left-0 right-0 w-full z-50 glass border-b border-white/10 py-2 md:py-3">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            
+            <!-- 左邊：logo + 公司名稱（尺寸剛好又霸氣） -->
+            <div class="flex items-center gap-4 md:gap-6">
+                <img src="images/logo-white-blank.png" 
+                    alt="ForeSence Logo" 
+                    class="w-48 h-48 md:w-52 md:h-52 lg:w-68 lg:h-68 object-contain drop-shadow-2xl">
+            </div>
+
+            <!-- 右邊選單（你原本的） -->
+            <div class="hidden lg:flex items-center gap-8 text-lg">
+                <a href="#" class="text-2xl md:text-3xl lg:text-4xl font-black gradient-text tracking-tight leading-none">ForeSence</a>
+                <a href="#coating-challenges" class="hover:text-cyan-400 transition">產業痛點</a>
+                <a href="#ai-advisor" class="hover:text-cyan-400 transition">AI 工程師</a>
+                <a href="#service-section" class="hover:text-cyan-400 transition">服務項目</a>
+                <a href="#industry-applications-section" class="hover:text-cyan-400 transition">產業應用</a>
+                <a href="#about-section" class="hover:text-cyan-400 transition">關於我們</a>
+                <a href="#contact-section" class="hover:text-cyan-400 transition">聯絡我們</a>
+                <div class="ml-8 flex gap-2">
+                    <button class="px-4 py-2 bg-cyan-500/20 border border-cyan-500 rounded-full lang-switch" data-lang="zh-TW">繁體中文</button>
+                    <button class="px-4 py-2 bg-white/10 rounded-full lang-switch" data-lang="en">English</button>
+                </div>
+            </div>
+            <button class="md:hidden text-3xl">☰</button>
+        </div>
+    </nav>
+
+    <!-- 2. 產業痛點區塊：改用 pt 固定內距，不用 vh（這才是關鍵！） -->
+    <section id="coating-challenges" class="pt-24 md:pt-28 lg:pt-32 pb-20 relative overflow-hidden">
+        <!-- 背景光暈（保留你喜歡的） -->
+        <div class="absolute inset-0 -z-10">
+            <div class="absolute top-10 left-1/2 -translate-x-1/2 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-1/4 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-5xl md:text-7xl font-black text-center mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                生產製造都會面臨的挑戰
+            </h2>
+            <p class="text-center text-xl md:text-2xl text-cyan-300/80 mb-16 max-w-4xl mx-auto">
+                這些痛點不僅直接影響生產效率,更蠶食著您的利潤空間
+            </p>
+
+            <!-- 你的四張卡片保持不變 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- 卡片 1 -->
+                <div class="group relative">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-3xl blur-lg opacity-60 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="relative glass rounded-3xl p-8 text-center transform transition-all duration-500 hover:-translate-y-6 hover:shadow-2xl border border-white/10">
+                        <div class="mb-6 flex justify-center">
+                            <img src="images/challenge-yield.png" alt="不穩定的產品良率" class="w-32 h-32 object-contain drop-shadow-2xl">
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4 text-cyan-300 group-hover:text-cyan-100 transition" 
+                            data-i18n="coating_challenges_item_yield">
+                            不穩定的產品良率
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed" 
+                            data-i18n="coating_challenges_item_yield_desc">
+                            產品品質波動大,良率難以控制,導致客戶抱怨與退貨
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 卡片 2 -->
+                <div class="group relative">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-600 rounded-3xl blur-lg opacity-60 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="relative glass rounded-3xl p-8 text-center transform transition-all duration-500 hover:-translate-y-6 hover:shadow-2xl border border-white/10">
+                        <div class="mb-6 flex justify-center">
+                            <img src="images/challenge-equip.png" alt="突發的設備故障" class="w-32 h-32 object-contain drop-shadow-2xl">
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4 text-purple-300 group-hover:text-purple-100 transition" 
+                            data-i18n="coating_challenges_item_equip">
+                            突發的設備故障
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed" 
+                            data-i18n="coating_challenges_item_equip_desc">
+                            設備突然故障造成停機,影響交期並增加維修成本
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 卡片 3 -->
+                <div class="group relative">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-orange-500 to-red-600 rounded-3xl blur-lg opacity-60 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="relative glass rounded-3xl p-8 text-center transform transition-all duration-500 hover:-translate-y-6 hover:shadow-2xl border border-white/10">
+                        <div class="mb-6 flex justify-center">
+                            <img src="images/challenge-cost.png" alt="持續攀升的營運成本" class="w-32 h-32 object-contain drop-shadow-2xl">
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4 text-orange-300 group-hover:text-orange-100 transition" 
+                            data-i18n="coating_challenges_item_cost">
+                            持續攀升的營運成本
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed" 
+                            data-i18n="coating_challenges_item_cost_desc">
+                            原料浪費嚴重,能源效率低下,成本控制困難
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 卡片 4 -->
+                <div class="group relative">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-green-500 to-teal-600 rounded-3xl blur-lg opacity-60 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="relative glass rounded-3xl p-8 text-center transform transition-all duration-500 hover:-translate-y-6 hover:shadow-2xl border border-white/10">
+                        <div class="mb-6 flex justify-center">
+                            <img src="images/challenge-expert.png" alt="老師傅的經驗斷層" class="w-32 h-32 object-contain drop-shadow-2xl">
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4 text-green-300 group-hover:text-green-100 transition" 
+                            data-i18n="coating_challenges_item_expert">
+                            老師傅的經驗斷層
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed" 
+                            data-i18n="coating_challenges_item_expert_desc">
+                            寶貴的製程經驗無法有效傳承,新人培訓週期長
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </nav>
-    <header class="bg-gradient text-white text-center py-5 rounded-4 shadow-sm mb-5" style="background: linear-gradient(90deg, #2b6cb0 0%, #3182ce 100%);">
-        <img src="images/main-visual.png" alt="公司主視覺" class="img-fluid mb-3 rounded-4 shadow" style="max-height:320px;object-fit:cover;">
-        <h1 data-i18n="company_title" style="font-size:4.0rem;letter-spacing:2px;">夆泩數位發展</h1>
-        <p class="lead" data-i18n="company_slogan" style="font-size:1.4rem;color:#000000;">專業、創新、信賴的夥伴</p>
-    </header>
-    <main class="container py-5">
-        <section class="bg-white rounded-4 shadow-sm p-4 mb-5" id="coating-challenges">
-            <h2 class="text-center fw-bold mb-3" data-i18n="coating_challenges_title" style="font-size: 3.5rem">生產製造都會面臨的挑戰</h2>
-            <p class="text-center text-muted mb-4" data-i18n="coating_challenges_subtitle">這些痛點不僅直接影響生產效率,更蠶食著您的利潤空間</p>
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-3 col-12">
-                    <div class="card h-100 rounded-4 shadow-sm text-center p-4">
-                        <div class="mb-3">
-                            <img src="images/challenge-yield.png" alt="不穩定的產品良率" style="width:128px;height:128px;">
-                        </div>
-                        <h5 class="fw-bold mb-2" data-i18n="coating_challenges_item_yield" style="font-size: 1.7rem">不穩定的產品良率</h5>
-                        <p class="text-muted" data-i18n="coating_challenges_item_yield_desc">產品品質波動大,良率難以控制,導致客戶抱怨與退貨</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-12">
-                    <div class="card h-100 rounded-4 shadow-sm text-center p-4">
-                        <div class="mb-3">
-                            <img src="images/challenge-equip.png" alt="突發的設備故障" style="width:128px;height:128px;">
-                        </div>
-                        <h5 class="fw-bold mb-2" data-i18n="coating_challenges_item_equip" style="font-size: 1.7rem">突發的設備故障</h5>
-                        <p class="text-muted" data-i18n="coating_challenges_item_equip_desc">設備突然故障造成停機,影響交期並增加維修成本</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-12">
-                    <div class="card h-100 rounded-4 shadow-sm text-center p-4">
-                        <div class="mb-3">
-                            <img src="images/challenge-cost.png" alt="持續攀升的營運成本" style="width:128px;height:128px;">
-                        </div>
-                        <h5 class="fw-bold mb-2" data-i18n="coating_challenges_item_cost" style="font-size: 1.7rem">持續攀升的營運成本</h5>
-                        <p class="text-muted" data-i18n="coating_challenges_item_cost_desc">原料浪費嚴重,能源效率低下,成本控制困難</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-12">
-                    <div class="card h-100 rounded-4 shadow-sm text-center p-4">
-                        <div class="mb-3">
-                            <img src="images/challenge-expert.png" alt="老師傅的經驗斷層" style="width:128px;height:128px;">
-                        </div>
-                        <h5 class="fw-bold mb-2" data-i18n="coating_challenges_item_expert" style="font-size: 1.7rem">老師傅的經驗斷層</h5>
-                        <p class="text-muted" data-i18n="coating_challenges_item_expert_desc">寶貴的製程經驗無法有效傳承,新人培訓週期長</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    </section>
 
-        <section class="bg-white rounded-4 shadow-sm p-4 mb-5">
-            <h2 class="text-center fw-bold mb-3" data-i18n="ai_advisor_title" style="font-size: 3.0rem">專屬的製程AI工程師</h2>
-            <p class="text-center text-muted mb-4" data-i18n="ai_advisor_subtitle">輕鬆與現有設備無縫接軌,為您帶來三大核心價值</p>
-            <div class="row g-5 align-items-center mb-5">
-                <div class="col-md-6 col-12">
-                    <div class="d-flex align-items-center mb-3">
-                        <img src="images/ai-target.png" alt="生產效率的自動優化師" style="width:40px;height:40px;" class="me-2">
-                        <h3 class="fw-bold mb-0" data-i18n="ai_advisor_opt_title">生產效率的自動優化師</h3>
-                    </div>
-                    <p class="mb-2" data-i18n="ai_advisor_opt_desc1">就像一位不知疲倦、且永不犯錯的優化師傅。即時分析設備、環境以及歷史批次的數百個參數,透過多目標演算法自動在「最高良率」、「最低成本」與「最短製程時間」之間找到最佳平衡點。</p>
-                    <p class="mb-3" data-i18n="ai_advisor_opt_desc2">您不再需要靠經驗反覆試錯,就能快速穩定生產,將良率與效率發揮到極致。</p>
-                    <div class="d-flex gap-5 mt-4">
-                        <div class="text-center">
-                            <div class="display-5 fw-bold text-success" data-i18n="ai_advisor_opt_value1">40%↓</div>
-                            <div class="small text-muted" data-i18n="ai_advisor_opt_label1" style="font-size: 1.5rem">調試時間</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="display-5 fw-bold text-success" data-i18n="ai_advisor_opt_value2">20%↓</div>
-                            <div class="small text-muted" data-i18n="ai_advisor_opt_label2" style="font-size: 1.5rem">調試成本</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="display-5 fw-bold text-danger" data-i18n="ai_advisor_opt_value3">10%↑</div>
-                            <div class="small text-muted" data-i18n="ai_advisor_opt_label3" style="font-size: 1.5rem">產品良率</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-12 text-center">
-                    <div class="bg-gradient rounded-4 d-flex align-items-center justify-content-center" style="height:320px;background:linear-gradient(90deg,#7f9cf5 0%,#6b47dc 100%);">
-                        <img src="images/ai-rocket.png" alt="AI優化師icon" style="width:600px;height:300px;">
-                    </div>
-                </div>
-            </div>
-            <div class="row g-5 align-items-center mb-5 flex-row-reverse">
-                <div class="col-md-6 col-12">
-                    <div class="d-flex align-items-center mb-3">
-                        <img src="images/ai-shield.png" alt="品質與成本的智慧管家" style="width:40px;height:40px;" class="me-2">
-                        <h3 class="fw-bold mb-0" data-i18n="ai_advisor_qc_title">品質與成本的智慧管家</h3>
-                    </div>
-                    <p class="mb-2" data-i18n="ai_advisor_qc_desc1">實現預防性品質控制,24小時監控生產狀況。一旦發現參數異常波動,會在問題發生前3-5分鐘發出預警,讓您在品質問題產生之前就介入處理。</p>
-                    <p class="mb-3" data-i18n="ai_advisor_qc_desc2">精準控制鍍膜厚度與原料配比,將每單位原料的效益最大化,確保營運成本始終處於最佳狀態。</p>
-                    <div class="d-flex gap-5 mt-4">
-                        <div class="text-center">
-                            <div class="display-5 fw-bold text-success" data-i18n="ai_advisor_qc_value1">40%↓</div>
-                            <div class="small text-muted" data-i18n="ai_advisor_qc_label1" style="font-size: 1.5rem">分析時間</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="display-5 fw-bold text-success" data-i18n="ai_advisor_qc_value2">20%↓</div>
-                            <div class="small text-muted" data-i18n="ai_advisor_qc_label2" style="font-size: 1.5rem">原料耗損</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="display-5 fw-bold text-success" data-i18n="ai_advisor_qc_value3">10%↓</div>
-                            <div class="small text-muted" data-i18n="ai_advisor_qc_label3" style="font-size: 1.5rem">不良率</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-12 text-center">
-                    <div class="bg-gradient rounded-4 d-flex align-items-center justify-content-center" style="height:320px;background:linear-gradient(90deg,#7f9cf5 0%,#6b47dc 100%);">
-                        <img src="images/ai-panel.png" alt="AI管家icon" style="width:600px;height:300px;">
-                    </div>
-                </div>
-            </div>
-            <div class="row g-5 align-items-center mb-5">
-                <div class="col-md-6 col-12">
-                    <div class="d-flex align-items-center mb-3">
-                        <img src="images/ai-brain.png" alt="知識傳承與管理的智慧助理" style="width:40px;height:40px;" class="me-2">
-                        <h3 class="fw-bold mb-0" data-i18n="ai_advisor_know_title">知識傳承與管理的智慧助理</h3>
-                    </div>
-                    <p class="mb-2" data-i18n="ai_advisor_know_desc1">將資深師傅的寶貴經驗數位化保存。透過RAG技術,整合所有分散的維修筆記、異常紀錄、SOP文件,甚至聊天紀錄等知識。</p>
-                    <p class="mb-3" data-i18n="ai_advisor_know_desc2">以自然語言對話方式,隨時調用公司累積的智慧。無論新進人員請教還是管理者查詢,都能瞬間獲得最相關、最準確的資訊。</p>
-                    <div class="d-flex gap-5 mt-4">
-                        <div class="text-center">
-                            <div class="display-5 fw-bold text-success" data-i18n="ai_advisor_know_value1">40%↓</div>
-                            <div class="small text-muted" data-i18n="ai_advisor_know_label1" style="font-size: 1.5rem">培訓時間</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="display-5 fw-bold text-success" data-i18n="ai_advisor_know_value2">40%↓</div>
-                            <div class="small text-muted" data-i18n="ai_advisor_know_label2" style="font-size: 1.5rem">操作錯誤</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="display-5 fw-bold text-success" data-i18n="ai_advisor_know_value3">40%↓</div>
-                            <div class="small text-muted" data-i18n="ai_advisor_know_label3" style="font-size: 1.5rem">報告撰寫時間</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-12 text-center">
-                    <div class="bg-gradient rounded-4 d-flex align-items-center justify-content-center" style="height:320px;background:linear-gradient(90deg,#7f9cf5 0%,#6b47dc 100%);">
-                        <img src="images/ai-books.png" alt="AI助理icon" style="width:600px;height:300px;">
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section class="bg-white rounded-4 shadow-sm p-4 mb-5" id="service-section">
-            <h2 data-i18n="service">服務項目</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img src="images/service1.png" class="card-img-top" alt="AI演算法應用">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold" data-i18n="service1" style="font-size: 2.0rem; color: #2b6cb0; text-align: center;">AI演算法應用</h5>
-                            <p class="card-text" data-i18n="service1_desc">透過先進的機器學習技術，我們為製造業量身打造智慧演算法解決方案。</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img src="images/service2.png" class="card-img-top" alt="AI Agent建置">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold" data-i18n="service2" style="font-size: 2.0rem; color: #2b6cb0; text-align: center;">AI Agent建置</h5>
-                            <p class="card-text" data-i18n="service2_desc">打造企業專屬的智能助理系統，24小時不間斷地協助員工處理日常任務。</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img src="images/service3.png" class="card-img-top" alt="AI 自動作業系統">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold" data-i18n="service3" style="font-size: 2.0rem; color: #2b6cb0; text-align: center;">AI 自動作業系統</h5>
-                            <p class="card-text" data-i18n="service3_desc">整合各式資訊系統,提升資料流通與決策效率。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="bg-white rounded-4 shadow-sm p-5 mb-5" id="industry-applications-section">
-            <h2 class="text-center fw-bold mb-3" data-i18n="industry_applications_title">深入各產業的智慧製程解決方案</h2>
-            <p class="text-center text-muted mb-5" data-i18n="industry_applications_subtitle">從半導體到光學鍍膜，ForeSense AI 助力不同產業突破製程瓶頸</p>
 
-            <div class="mb-5 border-bottom pb-4">
-                <div class="d-flex align-items-center mb-4">
-                    <img src="images/icon-semiconductor.png" alt="半導體icon" style="width:48px;height:48px;" class="me-3">
-                    <h3 class="fw-bold mb-0 text-primary" data-i18n="ia_semi_title">半導體製造</h3>
-                </div>
-                
-                <div class="row g-4 mb-4">
-                    <div class="col-md-6">
-                        <h4 data-i18n="ia_semi_overview_title">產業概況</h4>
-                        <p data-i18n="ia_semi_overview">半導體製程中的薄膜沉積是關鍵步驟，直接影響晶片效能與良率。面對先進製程節點的挑戰，製程參數的精準控制至關重要。</p>
-                    </div>
-                    <div class="col-md-6">
-                        <h4 data-i18n="ia_challenges_title">面臨的挑戰</h4>
-                        <ul class="list-unstyled">
-                            <li data-i18n="ia_semi_challenge1">良率波動難預測：製程參數微小變化導致良率大幅下降，傳統經驗法則難以應對 7nm 以下製程的複雜性</li>
-                            <li data-i18n="ia_semi_challenge2">設備維護成本高：Chamber 清潔週期難以最佳化，過度維護浪費資源，維護不足影響產品品質</li>
-                            <li data-i18n="ia_semi_challenge3">新製程開發週期長：新產品導入（NPI）需要大量實驗，耗時 3-6 個月才能穩定量產</li>
-                            <li data-i18n="ia_semi_challenge4">異常反應時間慢：發現製程異常時往往已產出大批不良品，損失慘重</li>
-                        </ul>
-                    </div>
-                </div>
 
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <h4 data-i18n="ia_solution_title">ForeSense 解決方案</h4>
-                        <ul class="list-unstyled">
-                            <li data-i18n="ia_semi_solution1">AI 預測良率模型：分析超過 200+ 製程參數，提前 24 小時預警良率異常，準確率達 92%</li>
-                            <li data-i18n="ia_semi_solution2">智慧設備保養排程：根據實際腔體狀況動態調整 PM（預防性維護）週期，延長設備壽命 15-20%</li>
-                            <li data-i18n="ia_semi_solution3">快速製程優化：透過 AI 建議最佳參數組合，將新製程開發時間縮短 40%</li>
-                            <li data-i18n="ia_semi_solution4">即時異常偵測：3-5 分鐘內發現製程偏移，立即發送警報並提供根因分析</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <h4 data-i18n="ia_benefit_title">實際效益</h4>
-                        <div class="d-flex gap-5">
-                            <div><div class="display-6 fw-bold text-success" data-i18n="ia_semi_benefit1">12-15%</div><div class="small text-muted" data-i18n="ia_semi_benefit1_label">良率提升</div></div>
-                            <div><div class="display-6 fw-bold text-info" data-i18n="ia_semi_benefit2">8-10%</div><div class="small text-muted" data-i18n="ia_semi_benefit2_label">設備稼動率提升</div></div>
-                            <div><div class="display-6 fw-bold text-warning" data-i18n="ia_semi_benefit3">40%</div><div class="small text-muted" data-i18n="ia_semi_benefit3_label">NPI 時間縮短</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- AI 三大核心價值（使用交錯動畫 + 數據跳動） -->
+    <!-- 1. 專屬的製程 AI 工程師（三大核心價值）科技版 -->
+    <section class="relative py-24 overflow-hidden" id="ai-advisor">
+        <!-- 背景光暈裝飾 -->
+        <div class="absolute inset-0 pointer-events-none opacity-50">
+            <div class="absolute top-1/3 left-0 w-96 h-96 bg-cyan-500/30 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/3 right-0 w-96 h-96 bg-purple-600/30 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-5xl md:text-8xl font-black text-center mb-8 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-pulse"
+                data-i18n="ai_advisor_title">
+                專屬的製程AI工程師
+            </h2>
+            <p class="text-center text-xl md:text-3xl text-cyan-300 mb-20 max-w-5xl mx-auto"
+                data-i18n="ai_advisor_subtitle">
+                輕鬆與現有設備無縫接軌，為您帶來三大核心價值
+            </p>
+
+            <!-- 第一塊：生產效率優化師 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
+                <div class="glass rounded-3xl p-10 lg:p-14 border border-white/10 backdrop-blur-xl group">
+                    <div class="flex items-center gap-6 mb-8">
+                        <!-- 1. 生產效率的自動優化師（靶心火箭） -->
+                        <div class="w-16 h-16">
+                            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-glow-cyan hover:drop-shadow-glow-cyan-intense transition">
+                                <circle cx="32" cy="32" r="26" stroke="currentColor" stroke-width="3" class="text-cyan-400"/>
+                                <path d="M32 12 L32 52 M12 32 L52 32" stroke="currentColor" stroke-width="3" class="text-cyan-400"/>
+                                <circle cx="32" cy="32" r="8" fill="#00e0ff"/>
+                            </svg>
                         </div>
-                        <p class="mt-3 small text-muted" data-i18n="ia_semi_benefit4">減少報廢成本：年節省 2,000-5,000 萬元</p>
+                        <h3 class="text-3xl md:text-4xl font-black text-cyan-300 group-hover:text-cyan-100 transition"
+                            data-i18n="ai_advisor_opt_title">生產效率的自動優化師</h3>
                     </div>
+                    <p class="text-lg leading-relaxed mb-6 text-gray-200" data-i18n="ai_advisor_opt_desc1">就像一位不知疲倦、且永不犯錯的優化師傅。</p>
+                    <p class="text-lg leading-relaxed mb-10 text-gray-300" data-i18n="ai_advisor_opt_desc2">您不再需要靠經驗反覆試錯,就能快速穩定生產,將良率與效率發揮到極致。</p>
+
+                    <div class="grid grid-cols-3 gap-8 text-center">
+                        <div class="p-8 rounded-2xl bg-white/5 border border-cyan-500/30">
+                            <div class="text-4xl font-black text-green-400" data-i18n="ai_advisor_opt_value1">40%↓</div>
+                            <div class="text-xl mt-2 text-cyan-300" data-i18n="ai_advisor_opt_label1">調適時間</div>
+                        </div>
+                        <div class="p-8 rounded-2xl bg-white/5 border border-cyan-500/30">
+                            <div class="text-4xl font-black text-green-400" data-i18n="ai_advisor_opt_value2">20%↓</div>
+                            <div class="text-xl mt-2 text-cyan-300" data-i18n="ai_advisor_opt_label2">調適成本</div>
+                        </div>
+                        <div class="p-8 rounded-2xl bg-white/5 border border-red-500/30">
+                            <div class="text-4xl font-black text-red-400" data-i18n="ai_advisor_opt_value3">10%↑</div>
+                            <div class="text-xl mt-2 text-cyan-300" data-i18n="ai_advisor_opt_label3">產品良率</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img src="images/ai-rocket.png" alt="AI優化師" class="mx-auto max-w-lg floating">
                 </div>
             </div>
 
-            <div class="mb-5 border-bottom pb-4">
-                <div class="d-flex align-items-center mb-4">
-                    <img src="images/icon-optic.png" alt="光學鍍膜icon" style="width:48px;height:48px;" class="me-3">
-                    <h3 class="fw-bold mb-0 text-success" data-i18n="ia_optic_title">光學鍍膜</h3>
-                </div>
-                
-                <div class="row g-4 mb-4">
-                    <div class="col-md-6">
-                        <h4 data-i18n="ia_semi_overview_title">產業概況</h4>
-                        <p data-i18n="ia_optic_overview">光學鍍膜應用於相機鏡頭、AR/VR 顯示器、汽車抬頭顯示器等領域，對膜層厚度、均勻度要求極高。</p>
+            <!-- 第二塊：品質與成本智慧管家（左右相反） -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32 flex-row-reverse">
+                <div class="glass rounded-3xl p-10 lg:p-14 border border-white/10 backdrop-blur-xl group">
+                    <div class="flex items-center gap-6 mb-8">
+                        <!-- <img src="images/ai-shield.png" alt="" class="w-16 h-16"> -->
+                        <!-- 2. 品質與成本的智慧管家（盾牌） -->
+                        <div class="w-16 h-16">
+                            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-glow-purple hover:drop-shadow-glow-purple-intense transition">
+                                <path d="M32 8 L52 18 L52 46 L32 56 L12 46 L12 18 Z" fill="none" stroke="currentColor" stroke-width="3" class="text-purple-400"/>
+                                <path d="M22 32 L28 40 L42 24" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="text-purple-400"/>
+                            </svg>
+                        </div>
+
+                        <h3 class="text-3xl md:text-4xl font-black text-purple-300 group-hover:text-purple-100 transition"
+                            data-i18n="ai_advisor_qc_title">品質與成本的智慧管家</h3>
                     </div>
-                    <div class="col-md-6">
-                        <h4 data-i18n="ia_challenges_title">面臨的挑戰</h4>
-                        <ul class="list-unstyled">
-                            <li data-i18n="ia_optic_challenge1">膜厚控制精度要求高：奈米級的膜厚偏差會影響光學性能，傳統監控方式反應不及時</li>
-                            <li data-i18n="ia_optic_challenge2">多層膜製程複雜：抗反射膜、濾光片等需要 10-30 層鍍膜，任一層失敗導致整批報廢</li>
-                            <li data-i18n="ia_optic_challenge3">色差與均勻度問題：大面積鍍膜時，邊緣與中心的膜厚差異難以控制</li>
-                            <li data-i18n="ia_optic_challenge4">客製化需求多：不同客戶規格差異大，製程參數調整依賴資深工程師經驗</li>
-                        </ul>
+                    <p class="text-lg leading-relaxed mb-6 text-gray-200" data-i18n="ai_advisor_qc_desc1">實現預防性品質控制,24小時監控生產狀況。</p>
+                    <p class="text-lg leading-relaxed mb-10 text-gray-300" data-i18n="ai_advisor_qc_desc2">精準控制鍍膜厚度與原料配比,將每單位原料的效益最大化,確保營運成本始終處於最佳狀態。</p>
+
+                    <div class="grid grid-cols-3 gap-8 text-center">
+                        <div class="p-8 rounded-2xl bg-white/5 border border-purple-500/30">
+                            <div class="text-4xl font-black text-green-400" data-i18n="ai_advisor_qc_value1">40%↓</div>
+                            <div class="text-xl mt-2 text-purple-300" data-i18n="ai_advisor_qc_label1">分析時間</div>
+                        </div>
+                        <div class="p-8 rounded-2xl bg-white/5 border border-purple-500/30">
+                            <div class="text-4xl font-black text-green-400" data-i18n="ai_advisor_qc_value2">20%↓</div>
+                            <div class="text-xl mt-2 text-purple-300" data-i18n="ai_advisor_qc_label2">原料耗損</div>
+                        </div>
+                        <div class="p-8 rounded-2xl bg-white/5 border border-purple-500/30">
+                            <div class="text-4xl font-black text-green-400" data-i18n="ai_advisor_qc_value3">10%↓</div>
+                            <div class="text-xl mt-2 text-purple-300" data-i18n="ai_advisor_qc_label3">不良率</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img src="images/ai-panel.png" alt="AI管家" class="mx-auto max-w-lg floating">
+                </div>
+            </div>
+
+            <!-- 第三塊：知識傳承與管理 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="glass rounded-3xl p-10 lg:p-14 border border-white/10 backdrop-blur-xl group">
+                    <div class="flex items-center gap-6 mb-8">
+                        <!-- <img src="images/ai-brain.png" alt="" class="w-16 h-16"> -->
+                        <!-- 3. 知識傳承與管理的智慧助理（大腦） -->
+                        <div class="w-16 h-16">
+                            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-glow-emerald hover:drop-shadow-glow-emerald-intense transition">
+                                <!-- 外圈能量環 -->
+                                <circle cx="32" cy="32" r="28" stroke="#34d399" stroke-width="2" opacity="0.4"/>
+                                <circle cx="32" cy="32" r="23" stroke="#34d399" stroke-width="1.5" opacity="0.7"/>
+                                
+                                <!-- 核心神經網路 -->
+                                <circle cx="32" cy="32" r="12" fill="#34d399" opacity="0.2"/>
+                                <circle cx="32" cy="32" r="8" fill="#34d399"/>
+                                
+                                <!-- 六條神經脈衝線 -->
+                                <path d="M32 32 L32 12" stroke="#34d399" stroke-width="2" class="animate-pulse"/>
+                                <path d="M32 32 L32 52" stroke="#34d399" stroke-width="2" class="animate-pulse" style="animation-delay:0.1s"/>
+                                <path d="M32 32 L12 32" stroke="#34d399" stroke-width="2" class="animate-pulse" style="animation-delay:0.2s"/>
+                                <path d="M32 32 L52 32" stroke="#34d399" stroke-width="2" class="animate-pulse" style="animation-delay:0.3s"/>
+                                <path d="M32 32 L20 18" stroke="#34d399" stroke-width="2" class="animate-pulse" style="animation-delay:0.4s"/>
+                                <path d="M32 32 L44 46" stroke="#34d399" stroke-width="2" class="animate-pulse" style="animation-delay:0.5s"/>
+                                
+                                <!-- 中心亮核 -->
+                                <circle cx="32" cy="32" r="4" fill="#ffffff"/>
+                            </svg>
+                        </div>
+
+                        <h3 class="text-3xl md:text-4xl font-black text-emerald-300 group-hover:text-emerald-100 transition"
+                            data-i18n="ai_advisor_know_title">知識傳承與管理的智慧助理</h3>
+                    </div>
+                    <p class="text-lg leading-relaxed mb-6 text-gray-200" data-i18n="ai_advisor_know_desc1">將資深師傅的寶貴經驗數位化保存。</p>
+                    <p class="text-lg leading-relaxed mb-10 text-gray-300" data-i18n="ai_advisor_know_desc2">以自然語言對話方式,隨時調用公司累積的智慧。</p>
+
+                    <div class="grid grid-cols-3 gap-8 text-center">
+                        <div class="p-8 rounded-2xl bg-white/5 border border-emerald-500/30">
+                            <div class="text-4xl font-black text-green-400" data-i18n="ai_advisor_know_value1">40%↓</div>
+                            <div class="text-xl mt-2 text-emerald-300" data-i18n="ai_advisor_know_label1">培訓時間</div>
+                        </div>
+                        <div class="p-8 rounded-2xl bg-white/5 border border-emerald-500/30">
+                            <div class="text-4xl font-black text-green-400" data-i18n="ai_advisor_know_value2">40%↓</div>
+                            <div class="text-xl mt-2 text-emerald-300" data-i18n="ai_advisor_know_label2">操作錯誤</div>
+                        </div>
+                        <div class="p-8 rounded-2xl bg-white/5 border border-emerald-500/30">
+                            <div class="text-4xl font-black text-green-400" data-i18n="ai_advisor_know_value3">40%↓</div>
+                            <div class="text-xl mt-2 text-emerald-300" data-i18n="ai_advisor_know_label3">報告撰寫時間</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img src="images/ai-books.png" alt="AI助理icon" class="mx-auto max-w-lg floating">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. 服務項目 - 高科技卡片版 -->
+    <section class="py-24" id="service-section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl md:text-7xl font-black text-center mb-20 bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent"
+                data-i18n="service">服務項目</h2>
+
+            <!-- 外層改成 grid + 固定高度卡片 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- 服務 1 -->
+                <div class="group relative h-full">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-3xl blur-xl opacity-70 group-hover:opacity-100 transition duration-700"></div>
+                    <div class="relative glass rounded-3xl overflow-hidden border border-white/10 
+                                transform transition-all duration-500 hover:-translate-y-8
+                                flex flex-col h-full"> <!-- ← 關鍵：加這兩個 -->
+                        <img src="images/service1.png" alt="AI演算法應用" class="w-full h-64 object-cover flex-shrink-0">
+                        <div class="p-10 flex flex-col justify-center flex-1"> <!-- ← 文字區撐開 -->
+                            <h3 class="text-3xl font-black text-center mb-6 text-cyan-300 group-hover:text-cyan-100 transition"
+                                data-i18n="service1">AI演算法應用</h3>
+                            <p class="text-lg text-gray-300 leading-relaxed text-center"
+                                data-i18n="service1_desc">透過先進的機器學習技術，我們為製造業量身打造智慧演算法解決方案。</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <h4 data-i18n="ia_solution_title">ForeSense 解決方案</h4>
-                        <ul class="list-unstyled">
-                            <li data-i18n="ia_optic_solution1">即時膜厚監控與預測：整合光學監控系統（OMS）數據，AI 即時預測最終膜厚，提前 10-15 秒調整鍍率</li>
-                            <li data-i18n="ia_optic_solution2">多層膜智慧排程：自動計算每層最佳參數，減少人為設定錯誤，成功率提升至 98%</li>
-                            <li data-i18n="ia_optic_solution3">均勻度優化演算法：分析基板旋轉速度、靶材角度等參數，將膜厚均勻度提升 20%</li>
-                            <li data-i18n="ia_optic_solution4">知識庫快速調參：系統記錄所有成功製程參數，新規格產品可在 30 分鐘內找到相似配方</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <h4 data-i18n="ia_benefit_title">實際效益</h4>
-                        <div class="d-flex gap-5">
-                            <div><div class="display-6 fw-bold text-success" data-i18n="ia_optic_benefit1">15-18%</div><div class="small text-muted" data-i18n="ia_optic_benefit1_label">良率提升</div></div>
-                            <div><div class="display-6 fw-bold text-info" data-i18n="ia_optic_benefit2">20-25%</div><div class="small text-muted" data-i18n="ia_optic_benefit2_label">膜厚一致性提升</div></div>
-                            <div><div class="display-6 fw-bold text-warning" data-i18n="ia_optic_benefit3">50%</div><div class="small text-muted" data-i18n="ia_optic_benefit3_label">客製化產品交期縮短</div></div>
+                <!-- 服務 2 -->
+                <div class="group relative h-full">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-600 rounded-3xl blur-xl opacity-70 group-hover:opacity-100 transition duration-700"></div>
+                    <div class="relative glass rounded-3xl overflow-hidden border border-white/10 
+                                transform transition-all duration-500 hover:-translate-y-8
+                                flex flex-col h-full">
+                        <img src="images/service2.png" alt="AI Agent建置" class="w-full h-64 object-cover flex-shrink-0">
+                        <div class="p-10 flex flex-col justify-center flex-1">
+                            <h3 class="text-3xl font-black text-center mb-6 text-purple-300 group-hover:text-purple-100 transition"
+                                data-i18n="service2">AI Agent建置</h3>
+                            <p class="text-lg text-gray-300 leading-relaxed text-center"
+                                data-i18n="service2_desc">打造企業專屬的智能助理系統，24小時不間斷地協助員工處理日常任務。</p>
                         </div>
-                        <p class="mt-3 small text-muted" data-i18n="ia_optic_benefit4">工程師調參時間節省：60%</p>
+                    </div>
+                </div>
+
+                <!-- 服務 3 -->
+                <div class="group relative h-full">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-3xl blur-xl opacity-70 group-hover:opacity-100 transition duration-700"></div>
+                    <div class="relative glass rounded-3xl overflow-hidden border border-white/10 
+                                transform transition-all duration-500 hover:-translate-y-8
+                                flex flex-col h-full">
+                        <img src="images/service3.png" alt="AI 自動作業系統" class="w-full h-64 object-cover flex-shrink-0">
+                        <div class="p-10 flex flex-col justify-center flex-1">
+                            <h3 class="text-3xl font-black text-center mb-6 text-emerald-300 group-hover:text-emerald-100 transition"
+                                data-i18n="service3">AI 自動作業系統</h3>
+                            <p class="text-lg text-gray-300 leading-relaxed text-center"
+                                data-i18n="service3_desc">整合各式資訊系統，協助企業提升資料流通與決策效率。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 產業應用 - 極致科技感版 -->
+    <section id="industry-applications-section" class="relative py-32 overflow-hidden">
+        <!-- 背景光暈裝飾 -->
+        <div class="absolute inset-0 pointer-events-none opacity-60">
+            <div class="absolute top-20 left-10 w-96 h-96 bg-cyan-600/30 rounded-full blur-3xl"></div>
+            <div class="absolute top-1/2 right-0 w-80 h-80 bg-purple-600/30 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 left-1/3 w-96 h-96 bg-emerald-600/20 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-5xl md:text-8xl font-black text-center mb-8 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"
+                data-i18n="industry_applications_title">
+                深入各產業的智慧製程解決方案
+            </h2>
+            <p class="text-center text-xl md:text-3xl text-cyan-300/80 mb-20 max-w-5xl mx-auto"
+                data-i18n="industry_applications_subtitle">
+                從半導體到光學鍍膜，ForeSense AI 助力不同產業突破製程瓶頸
+            </p>
+
+            <!-- 半導體製造 -->
+            <div class="mb-20 group">
+                <div class="flex items-center gap-6 mb-10">
+                    <!-- <img src="images/icon-semiconductor.png" alt="半導體" class="w-16 h-16 floating"> -->
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' class='w-20 h-20 floating-pro drop-shadow-2xl ring-4 ring-cyan-500/0 hover:ring-cyan-400/50 transition-all duration-500 hover:scale-110'><circle cx='32' cy='32' r='28' fill='none' stroke='%2306b6d4' stroke-width='3'/><circle cx='32' cy='32' r='20' fill='none' stroke='%2306b6d4' stroke-width='2' opacity='0.6'/><path d='M32 12v8m0 24v8m-20-20h8m24 0h8' stroke='%2306b6d4' stroke-width='3' stroke-linecap='round'/></svg>" alt="半導體"
+                         class="w-20 h-20 floating-pro drop-shadow-2xl 
+                                ring-4 ring-cyan-500/0 hover:ring-cyan-400/50 
+                                transition-all duration-500 hover:scale-110">
+                    <h3 class="text-4xl md:text-5xl font-black text-cyan-300 group-hover:text-cyan-100 transition"
+                        data-i18n="ia_semi_title">半導體製造</h3>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- 左側：概況 + 挑戰 -->
+                    <div class="space-y-10">
+                        <div class="glass rounded-3xl p-8 border border-cyan-500/30 ia-card-left">
+                            <h4 class="text-2xl font-bold text-cyan-300 mb-4" data-i18n="ia_semi_overview_title">產業概況</h4>
+                            <p class="text-gray-300 leading-relaxed" data-i18n="ia_semi_overview"></p>
+                        </div>
+                        <div class="glass rounded-3xl p-8 border border-red-500/30 ia-card-left">
+                            <h4 class="text-2xl font-bold text-red-400 mb-4" data-i18n="ia_challenges_title">面臨的挑戰</h4>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-start gap-3"><span class="text-red-400 mt-1">▹</span> <span data-i18n="ia_semi_challenge1"></span></li>
+                                <li class="flex items-start gap-3"><span class="text-red-400 mt-1">▹</span> <span data-i18n="ia_semi_challenge2"></span></li>
+                                <li class="flex items-start gap-3"><span class="text-red-400 mt-1">▹</span> <span data-i18n="ia_semi_challenge3"></span></li>
+                                <li class="flex items-start gap-3"><span class="text-red-400 mt-1">▹</span> <span data-i18n="ia_semi_challenge4"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 右側：解決方案 + 效益 -->
+                    <div class="space-y-10">
+                        <div class="glass rounded-3xl p-8 border border-emerald-500/30 ia-card-right">
+                            <h4 class="text-2xl font-bold text-emerald-300 mb-4" data-i18n="ia_solution_title">ForeSense 解決方案</h4>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> <span data-i18n="ia_semi_solution1"></span></li>
+                                <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> <span data-i18n="ia_semi_solution2"></span></li>
+                                <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> <span data-i18n="ia_semi_solution3"></span></li>
+                                <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> <span data-i18n="ia_semi_solution4"></span></li>
+                            </ul>
+                        </div>
+                        <div class="glass rounded-3xl p-8 border border-yellow-500/30 ia-card-right">
+                            <h4 class="text-2xl font-bold text-yellow-300 mb-6" data-i18n="ia_benefit_title">實際效益</h4>
+                            <div class="grid grid-cols-3 gap-6 text-center">
+                                <div class="p-4 rounded-2xl bg-white/5 flex flex-col justify-center h-40 hover-card">
+                                    <div class="text-4xl font-black text-green-400" data-i18n="ia_semi_benefit1">12-15%</div>
+                                    <div class="text-cyan-300 mt-2" data-i18n="ia_semi_benefit1_label">良率提升</div>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-white/5 flex flex-col justify-center h-40 hover-card">
+                                    <div class="text-4xl font-black text-blue-400" data-i18n="ia_semi_benefit2">8-10%</div>
+                                    <div class="text-cyan-300 mt-2" data-i18n="ia_semi_benefit2_label">稼動率提升</div>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-white/5 flex flex-col justify-center h-40 hover-card">
+                                    <div class="text-4xl font-black text-orange-400" data-i18n="ia_semi_benefit3">40%</div>
+                                    <div class="text-cyan-300 mt-2" data-i18n="ia_semi_benefit3_label">NPI 時間縮短</div>
+                                </div>
+                            </div>
+                            <p class="mt-6 text-sm text-gray-400 text-center" data-i18n="ia_semi_benefit4">
+                                年節省 2,000-5,000 萬元報廢成本
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div>
-                <div class="d-flex align-items-center mb-4">
-                    <img src="images/icon-tool.png" alt="工具機icon" style="width:48px;height:48px;" class="me-3">
-                    <h3 class="fw-bold mb-0 text-danger" data-i18n="ia_tool_title">工具機硬膜鍍膜</h3>
+            <!-- 光學鍍膜（同結構，顏色換紫綠） -->
+            <div class="mb-20 group">
+                <div class="flex items-center gap-6 mb-10">
+                    <!-- <img src="images/icon-optic.png" alt="光學鍍膜" class="w-16 h-16 floating"> -->
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' class='w-20 h-20 floating-pro drop-shadow-2xl ring-4 ring-purple-500/0 hover:ring-purple-400/50 transition-all duration-500 hover:scale-110'><circle cx='32' cy='32' r='26' fill='none' stroke='%238b5cf6' stroke-width='4'/><circle cx='32' cy='32' r='18' fill='none' stroke='%238b5cf6' stroke-width='3' opacity='0.7'/><circle cx='32' cy='32' r='10' fill='none' stroke='%238b5cf6' stroke-width='2' opacity='0.5'/><path d='M20 20l24 24m0-24l-24 24' stroke='%238b5cf6' stroke-width='2' opacity='0.8'/></svg>" alt="光學鍍膜"
+                         class="w-20 h-20 floating-pro drop-shadow-2xl 
+                                ring-4 ring-purple-500/0 hover:ring-purple-400/50 
+                                transition-all duration-500 hover:scale-110">
+                    <h3 class="text-4xl md:text-5xl font-black text-purple-300 group-hover:text-purple-100 transition"
+                        data-i18n="ia_optic_title">光學鍍膜</h3>
                 </div>
-                
-                <div class="row g-4 mb-4">
-                    <div class="col-md-6">
-                        <h4 data-i18n="ia_semi_overview_title">產業概況</h4>
-                        <p data-i18n="ia_tool_overview">刀具、模具的硬質鍍膜（如 TiN、TiAlN、DLC）決定其耐磨性與使用壽命。</p>
-                    </div>
-                    <div class="col-md-6">
-                        <h4 data-i18n="ia_challenges_title">面臨的挑戰</h4>
-                        <ul class="list-unstyled">
-                            <li data-i18n="ia_tool_challenge1">膜層附著力不穩定：批次間膜層容易剝落，客訴率高</li>
-                            <li data-i18n="ia_tool_challenge2">硬度與韌性難平衡：過硬容易脆裂，過軟耐磨性不足</li>
-                            <li data-i18n="ia_tool_challenge3">批量一致性差：同爐次不同位置的工件品質差異大</li>
-                            <li data-i18n="ia_tool_challenge4">製程黑盒子問題：業界依賴師傅經驗，技術難以傳承</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <h4 data-i18n="ia_solution_title">ForeSense 解決方案</h4>
-                        <ul class="list-unstyled">
-                            <li data-i18n="ia_tool_solution1">附著力預警系統：監控離子轟擊能量、基材溫度，預測膜層結合強度</li>
-                            <li data-i18n="ia_tool_solution2">多目標參數優化：AI 平衡硬度（>2500HV）與韌性需求，找出最佳沉積條件</li>
-                            <li data-i18n="ia_tool_solution3">爐內均勻度控制：優化基材旋轉速度、氣體分佈，減少位置差異至 5% 以內</li>
-                            <li data-i18n="ia_tool_solution4">專家知識數位化：將老師傅經驗轉化為 AI 模型，新手也能調出高品質參數</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <h4 data-i18n="ia_benefit_title">實際效益</h4>
-                        <div class="d-flex gap-5">
-                            <div><div class="display-6 fw-bold text-success" data-i18n="ia_tool_benefit1">60%</div><div class="small text-muted" data-i18n="ia_tool_benefit1_label">客訴率降低</div></div>
-                            <div><div class="display-6 fw-bold text-info" data-i18n="ia_tool_benefit2">25-30%</div><div class="small text-muted" data-i18n="ia_tool_benefit2_label">刀具壽命延長</div></div>
-                            <div><div class="display-6 fw-bold text-warning" data-i18n="ia_tool_benefit3">40%</div><div class="small text-muted" data-i18n="ia_tool_benefit3_label">批次一致性提升</div></div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="space-y-10">
+                        <div class="glass rounded-3xl p-8 border border-purple-500/30 ia-card-left">
+                            <h4 class="text-2xl font-bold text-purple-300 mb-4" data-i18n="ia_semi_overview_title">產業概況</h4>
+                            <p class="text-gray-300 leading-relaxed" data-i18n="ia_optic_overview"></p>
                         </div>
-                        <p class="mt-3 small text-muted" data-i18n="ia_tool_benefit4">新人培訓時間縮短：從 6 個月到 2 個月</p>
+                        <div class="glass rounded-3xl p-8 border border-red-500/30 ia-card-left">
+                            <h4 class="text-2xl font-bold text-red-400 mb-4" data-i18n="ia_challenges_title">面臨的挑戰</h4>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-start gap-3"><span class="text-red-400 mt-1">▹</span> <span data-i18n="ia_optic_challenge1"></span></li>
+                                <li class="flex items-start gap-3"><span class="text-red-400 mt-1">▹</span> <span data-i18n="ia_optic_challenge2"></span></li>
+                                <li class="flex items-start gap-3"><span class="text-red-400 mt-1">▹</span> <span data-i18n="ia_optic_challenge3"></span></li>
+                                <li class="flex items-start gap-3"><span class="text-red-400 mt-1">▹</span> <span data-i18n="ia_optic_challenge4"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="space-y-10">
+                        <div class="glass rounded-3xl p-8 border border-emerald-500/30 ia-card-right">
+                            <h4 class="text-2xl font-bold text-emerald-300 mb-4" data-i18n="ia_solution_title">ForeSense 解決方案</h4>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> <span data-i18n="ia_optic_solution1"></span></li>
+                                <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> <span data-i18n="ia_optic_solution2"></span></li>
+                                <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> <span data-i18n="ia_optic_solution3"></span></li>
+                                <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> <span data-i18n="ia_optic_solution4"></span></li>
+                            </ul>
+                        </div>
+                        <div class="glass rounded-3xl p-8 border border-yellow-500/30 ia-card-right">
+                            <h4 class="text-2xl font-bold text-yellow-300 mb-6" data-i18n="ia_benefit_title">實際效益</h4>
+                            <div class="grid grid-cols-3 gap-6 text-center">
+                                <div class="p-6 rounded-2xl bg-white/5 flex flex-col justify-center h-40 hover-card">
+                                    <div class="text-4xl font-black text-green-400" data-i18n="ia_optic_benefit1">15-18%</div>
+                                    <div class="text-purple-300 mt-2 text-base font-medium" data-i18n="ia_optic_benefit1_label">良率提升</div>
+                                </div>
+                                <div class="p-6 rounded-2xl bg-white/5 flex flex-col justify-center h-40 hover-card">
+                                    <div class="text-4xl font-black text-blue-400" data-i18n="ia_optic_benefit2">20-25%</div>
+                                    <div class="text-purple-300 mt-2 text-base font-medium" data-i18n="ia_optic_benefit2_label">一致性提升</div>
+                                </div>
+                                <div class="p-6 rounded-2xl bg-white/5 flex flex-col justify-center h-40 hover-card">
+                                    <div class="text-4xl font-black text-orange-400" data-i18n="ia_optic_benefit3">50%</div>
+                                    <div class="text-purple-300 mt-2 text-base font-medium" data-i18n="ia_optic_benefit3_label">交期縮短</div>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-sm text-gray-400" data-i18n="ia_optic_benefit4">工程師調參時間節省 60%</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <section class="bg-white rounded-4 shadow-sm p-4 mb-5" id="about-section">
-            <h2 class="text-center fw-bold mb-5" data-i18n="about">關於我們</h2>
-            
-            <div class="row g-5 align-items-center mb-5">
-                <div class="col-md-6 col-12">
-                    <h3 class="fw-bold mb-3" data-i18n="about_point1_title">專業顧問團隊</h3>
-                    <p data-i18n="about_point1">我們擁有經驗豐富的顧問團隊,深入了解各產業特性與市場趨勢,為每位客戶量身打造最適合的數位轉型策略,確保方案契合企業需求與發展目標。</p>
-                    
-                    <div class="d-flex gap-5 mt-4">
-                        <div>
-                            <div class="display-5 fw-bold text-primary" data-i18n="about_point1_value1">10+</div>
-                            <div class="small text-muted" data-i18n="about_point1_label1">年產業經驗</div>
+
+            <!-- 工具機硬膜鍍膜 -->
+            <div class="group">
+                <div class="flex items-center gap-6 mb-10">
+                    <!-- <img src="images/icon-tool.png" alt="工具機" class="w-16 h16 floating"> -->
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' class='w-20 h-20 floating-pro drop-shadow-2xl ring-4 ring-emerald-500/0 hover:ring-emerald-400/50 transition-all duration-500 hover:scale-110'><path d='M32 8l14 10v20l-14 10-14-10V18Z' fill='none' stroke='%2309c78b' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/><path d='M32 8v30m-14-20l28 20m-28 0l28-20' stroke='%2309c78b' stroke-width='3' opacity='0.9' stroke-linecap='round'/></svg>" alt="工具機硬膜"
+                            class="w-20 h-20 floating-pro drop-shadow-2xl 
+                                transition-all duration-500 hover:scale-110">
+                    <h3 class="text-4xl md:text-5xl font-black text-emerald-300 group-hover:text-emerald-100 transition"
+                        data-i18n="ia_tool_title">工具機硬膜鍍膜</h3>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="space-y-10">
+                        <div class="glass rounded-3xl p-8 border border-emerald-500/30 ia-card-left">
+                            <h4 class="text-2xl font-bold text-emerald-300 mb-4" data-i18n="ia_semi_overview_title">產業概況</h4>
+                            <p class="text-gray-300 leading-relaxed" data-i18n="ia_tool_overview"></p>
                         </div>
-                        <div>
-                            <div class="display-5 fw-bold text-success" data-i18n="about_point1_value2">50+</div>
-                            <div class="small text-muted" data-i18n="about_point1_label2">成功案例</div>
+                        <div class="glass rounded-3xl p-8 border border-red-500/30 ia-card-left">
+                            <h4 class="text-2xl font-bold text-red-400 mb-4" data-i18n="ia_challenges_title">面臨的挑戰</h4>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-start gap-3"><span class="text-red-400 mt-1">▹</span> <span data-i18n="ia_tool_challenge1"></span></li>
+                                <li class="flex items-start gap-3"><span class="text-red-400 mt-1">▹</span> <span data-i18n="ia_tool_challenge2"></span></li>
+                                <li class="flex items-start gap-3"><span class="text-red-400 mt-1">▹</span> <span data-i18n="ia_tool_challenge3"></span></li>
+                                <li class="flex items-start gap-3"><span class="text-red-400 mt-1">▹</span> <span data-i18n="ia_tool_challenge4"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="space-y-10">
+                        <div class="glass rounded-3xl p-8 border border-emerald-500/30 ia-card-right">
+                            <h4 class="text-2xl font-bold text-emerald-300 mb-4" data-i18n="ia_solution_title">ForeSense 解決方案</h4>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> <span data-i18n="ia_tool_solution1"></span></li>
+                                <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> <span data-i18n="ia_tool_solution2"></span></li>
+                                <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> <span data-i18n="ia_tool_solution3"></span></li>
+                                <li class="flex items-start gap-3"><span class="text-emerald-400 mt-1">✓</span> <span data-i18n="ia_tool_solution4"></span></li>
+                            </ul>
+                        </div>
+                        <div class="glass rounded-3xl p-8 border border-yellow-500/30 ia-card-right">
+                            <h4 class="text-2xl font-bold text-yellow-300 mb-6" data-i18n="ia_benefit_title">實際效益</h4>
+                            <div class="grid grid-cols-3 gap-6 text-center">
+                                <div class="p-6 rounded-2xl bg-white/5 flex flex-col justify-center h-40 hover-card">
+                                    <div class="text-4xl font-black text-green-400" data-i18n="ia_tool_benefit1">60%</div>
+                                    <div class="text-emerald-300 mt-2 text-base font-medium" data-i18n="ia_tool_benefit1_label">客訴降低</div>
+                                </div>
+                                <div class="p-6 rounded-2xl bg-white/5 flex flex-col justify-center h-40 hover-card">
+                                    <div class="text-4xl font-black text-blue-400" data-i18n="ia_tool_benefit2">25-30%</div>
+                                    <div class="text-emerald-300 mt-2 text-base font-medium" data-i18n="ia_tool_benefit2_label">壽命延長</div>
+                                </div>
+                                <div class="p-6 rounded-2xl bg-white/5 flex flex-col justify-center h-40 hover-card">
+                                    <div class="text-4xl font-black text-orange-400" data-i18n="ia_tool_benefit3">40%</div>
+                                    <div class="text-emerald-300 mt-2 text-base font-medium" data-i18n="ia_tool_benefit3_label">一致性提升</div>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-sm text-gray-400" data-i18n="ia_tool_benefit4">新人培訓從 6 個月 → 2 個月</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-12 text-center">
-                    <img src="images/about-team.png" alt="專業顧問團隊" class="img-fluid rounded-4 shadow" style="max-height:500px;object-fit:cover;">
-                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="row g-5 align-items-center mb-5 flex-row-reverse">
-                <div class="col-md-6 col-12">
-                    <h3 class="fw-bold mb-3" data-i18n="about_point2_title">跨領域技術整合</h3>
-                    <p data-i18n="about_point2">結合 AI、數據分析、雲端技術與軟體開發等多元專業,我們提供全方位的技術整合服務,幫助企業提升營運效率、優化決策流程,在競爭激烈的市場中保持領先地位。</p>
-                    
-                    <div class="d-flex gap-5 mt-4">
-                        <div>
-                            <div class="display-5 fw-bold text-info" data-i18n="about_point2_value1">5+</div>
-                            <div class="small text-muted" data-i18n="about_point2_label1">核心技術領域</div>
+    <!-- 關於我們 - 極致科技感版 -->
+    <section id="about-section" class="relative py-32 overflow-hidden">
+        <!-- 背景光暈 -->
+        <div class="absolute inset-0 pointer-events-none opacity-50">
+            <div class="absolute top-20 left-10 w-96 h-96 bg-cyan-600/30 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-600/30 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-5xl md:text-8xl font-black text-center mb-20 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"
+                data-i18n="about">關於我們</h2>
+
+            <!-- 專業顧問團隊 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
+                <div class="glass rounded-3xl p-10 lg:p-14 border border-cyan-500/30 group">
+                    <h3 class="text-4xl md:text-5xl font-black mb-8 text-cyan-300 group-hover:text-cyan-100 transition"
+                        data-i18n="about_point1_title">專業顧問團隊</h3>
+                    <p class="text-lg leading-relaxed text-gray-200 mb-10" data-i18n="about_point1"></p>
+                    <div class="grid grid-cols-2 gap-10 text-center">
+                        <div class="p-6 rounded-2xl bg-white/5 border border-cyan-500/30">
+                            <div class="text-7xl font-black text-cyan-400" data-i18n="about_point1_value1">10+</div>
+                            <div class="text-xl text-cyan-300 mt-3" data-i18n="about_point1_label1">年產業經驗</div>
                         </div>
-                        <div>
-                            <div class="display-5 fw-bold text-primary" data-i18n="about_point2_value2">30%</div>
-                            <div class="small text-muted" data-i18n="about_point2_label2">平均效率提升</div>
+                        <div class="p-6 rounded-2xl bg-white/5 border border-emerald-500/30">
+                            <div class="text-7xl font-black text-emerald-400" data-i18n="about_point1_value2">50+</div>
+                            <div class="text-xl text-emerald-300 mt-3" data-i18n="about_point1_label2">成功案例</div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-12 text-center">
-                    <img src="images/about-tech.png" alt="技術整合" class="img-fluid rounded-4 shadow" style="max-height:500px;object-fit:cover;">
+                <div class="text-center">
+                    <img src="images/about-team.png" alt="專業顧問團隊" class="mx-auto max-w-lg rounded-3xl shadow-2xl floating border border-white/20">
                 </div>
             </div>
 
-            <div class="row g-5 align-items-center">
-                <div class="col-md-6 col-12">
-                    <h3 class="fw-bold mb-3" data-i18n="about_point3_title">持續創新,追求卓越</h3>
-                    <p data-i18n="about_point3">我們的成員來自 U-start 創新創業計畫「RAGtimAIze」團隊與 NYCU 創新創業競賽「好理加太」團隊,擁有豐富的創新實戰經驗。我們秉持著創業家精神,不斷探索新技術、開發創新解決方案,與客戶共同成長,追求卓越表現。</p>
-                    
-                    <div class="d-flex gap-5 mt-4">
-                        <div>
-                            <div class="display-5 fw-bold text-warning" data-i18n="about_point3_value1">2</div>
-                            <div class="small text-muted" data-i18n="about_point3_label1">創業競賽獲獎</div>
+            <!-- 跨領域技術整合（左右相反） -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32 flex-row-reverse">
+                <div class="glass rounded-3xl p-10 lg:p-14 border border-purple-500/30 group">
+                    <h3 class="text-4xl md:text-5xl font-black mb-8 text-purple-300 group-hover:text-purple-100 transition"
+                        data-i18n="about_point2_title">跨領域技術整合</h3>
+                    <p class="text-lg leading-relaxed text-gray-200 mb-10" data-i18n="about_point2"></p>
+                    <div class="grid grid-cols-2 gap-10 text-center">
+                        <div class="p-6 rounded-2xl bg-white/5 border border-purple-500/30">
+                            <div class="text-7xl font-black text-purple-400" data-i18n="about_point2_value1">5+</div>
+                            <div class="text-xl text-purple-300 mt-3" data-i18n="about_point2_label1">核心技術領域</div>
                         </div>
-                        <div>
-                            <div class="display-5 fw-bold text-danger" data-i18n="about_point3_value2">100%</div>
-                            <div class="small text-muted" data-i18n="about_point3_label2">創新精神</div>
+                        <div class="p-6 rounded-2xl bg-white/5 border border-blue-500/30">
+                            <div class="text-7xl font-black text-blue-400" data-i18n="about_point2_value2">30%</div>
+                            <div class="text-xl text-blue-300 mt-3" data-i18n="about_point2_label2">平均效率提升</div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-12 text-center">
-                    <img src="images/about-innovation.png" alt="創新精神" class="img-fluid rounded-4 shadow" style="max-height:500px;object-fit:cover;">
+                <div class="text-center">
+                    <img src="images/about-tech.png" alt="技術整合" class="mx-auto max-w-lg rounded-3xl shadow-2xl floating border border-white/20">
                 </div>
             </div>
-        </section>
 
-        <section class="bg-white rounded-4 shadow-sm p-4 mb-5" id="contact-section">
-            <h2 data-i18n="contact">聯絡我們</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <ul class="list-unstyled mb-3">
-                        <li><strong data-i18n="address_label">地址:</strong><span data-i18n="address">新竹縣竹北市光明一路349號</span></li>
-                        <li><strong data-i18n="phone_label">電話:</strong><span data-i18n="phone">(02) 1234-5678</span></li>
-                        <li><strong data-i18n="email_label">Email:</strong><span data-i18n="email">info@forsence.com</span></li>
-                        <li><strong data-i18n="service_time_label">服務時間:</strong><span data-i18n="service_time">週一至週五 9:00-18:00</span></li>
+            <!-- 持續創新 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="glass rounded-3xl p-10 lg:p-14 border border-orange-500/30 group">
+                    <h3 class="text-4xl md:text-5xl font-black mb-8 text-orange-300 group-hover:text-orange-100 transition"
+                        data-i18n="about_point3_title">持續創新,追求卓越</h3>
+                    <p class="text-lg leading-relaxed text-gray-200 mb-10" data-i18n="about_point3"></p>
+                    <div class="grid grid-cols-2 gap-10 text-center">
+                        <div class="p-6 rounded-2xl bg-white/5 border border-orange-500/30">
+                            <div class="text-7xl font-black text-orange-400" data-i18n="about_point3_value1">2</div>
+                            <div class="text-xl text-orange-300 mt-3" data-i18n="about_point3_label1">創業競賽獲獎</div>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-white/5 border border-red-500/30">
+                            <div class="text-7xl font-black text-red-400" data-i18n="about_point3_value2">100%</div>
+                            <div class="text-xl text-red-300 mt-3" data-i18n="about_point3_label2">創新精神</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img src="images/about-innovation.png" alt="創新精神" class="mx-auto max-w-lg rounded-3xl shadow-2xl floating border border-white/20">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 聯絡我們 - 科技感版 -->
+    <section id="contact-section" class="relative py-32 overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none opacity-40">
+            <div |class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-radial from-cyan-500/20 to-transparent blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-5xl md:text-7xl font-black text-center mb-20 bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent"
+                data-i18n="contact">聯絡我們</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- 聯絡資訊 -->
+                <div class="glass rounded-3xl p-10 lg:p-14 border border-white/10">
+                    <ul class="space-y-8 text-xl text-gray-200">
+                        <li class="flex items-center gap-5">
+                            <span class="text-cyan-400">📍</span>
+                            <div>
+                                <strong data-i18n="address_label">地址：</strong>
+                                <span data-i18n="address">新竹縣竹北市光明一路349號</span>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-5">
+                            <span class="text-cyan-400">☎</span>
+                            <div>
+                                <strong data-i18n="phone_label">電話：</strong>
+                                <span data-i18n="phone">(02) 1234-5678</span>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-5">
+                            <span class="text-cyan-400">✉</span>
+                            <div>
+                                <strong data-i18n="email_label">Email：</strong>
+                                <span data-i18n="email">info@forsence.com</span>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-5">
+                            <span class="text-cyan-400">🕐</span>
+                            <div>
+                                <strong data-i18n="service_time_label">服務時間：</strong>
+                                <span data-i18n="service_time">週一至週五 9:00-18:00</span>
+                            </div>
+                        </li>
                     </ul>
                 </div>
-                <div class="col-md-6">
-                    <iframe src="https://www.google.com/maps?q=新竹縣竹北市光明一路349號&output=embed" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+                <!-- Google 地圖 -->
+                <div class="glass rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                    <iframe 
+                        src="https://www.google.com/maps?q=新竹縣竹北市光明一路349號&output=embed" 
+                        width="100%" 
+                        height="420" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
                 </div>
             </div>
-        </section>
-    </main>
-    <div id="footer"></div>
+        </div>
+    </section>
+
+
+
+
+    <!-- 全部都只用 class，不用內嵌 style -->
+
+    <!-- 範例：放你剛剛最後改好的「關於我們」與「聯絡我們」 -->
+    <!--（直接把上一則回覆的兩個 <section> 貼進來即可）-->
+
+    <!-- Footer -->
+    <footer class="glass py-16 text-center border-t border-white/10 mt-40">
+        <p class="text-xl" data-i18n="footer">版權所有 © 2025 夆泩數位發展 ForeSence Tech</p>
+    </footer>
+
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
+    <!-- 強制用完整路徑 + 加上 ?v=1 破快取 -->
+    <script src="js/main.js?v=2025"></script>
+    
+    <!-- 測試用：看 main.js 有沒有真的載入 -->
+    <script>
+        console.log("index.html 已載入完畢");
+        if (typeof translate === 'undefined') {
+        console.error("✗ main.js 沒載入！i18n 無法運作");
+        } else {
+        console.log("✓ main.js 載入成功！i18n 正常");
+        }
+    </script>
 </body>
 </html>
