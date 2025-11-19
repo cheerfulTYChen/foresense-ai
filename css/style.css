@@ -4,21 +4,6 @@
 body { font-family: 'Inter', 'Noto Sans TC', sans-serif; }
 #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; background: radial-gradient(circle at top, #0a1128 0%, #000000 100%); }
 
-/* 讓第一區塊內容自動往下推，不被 fixed header 蓋到 */
-body {
-    padding-top: 180px;        /* 手機版預留高度 */
-}
-@media (min-width: 768px) {
-    body {
-        padding-top: 240px;    /* 電腦版預留更高 */
-    }
-}
-@media (min-width: 1024px) {
-    body {
-        padding-top: 260px;
-    }
-}
-
 /* 手機最高 700px，電腦最高 800px，永遠不會再空一大塊 */
 @media (max-height: 800px) {
     .hero-section { height: 70vh !important; }
@@ -26,6 +11,18 @@ body {
 @media (min-height: 801px) {
     .hero-section { height: 80vh !important; }
 }
+
+#header-push {
+    height: 140px;        /* 手機版 header 高度 */
+}
+@media (min-width: 768px) {
+    #header-push { height: 180px; }   /* 平板 */
+}
+@media (min-width: 1024px) {
+    #header-push { height: 200px; }   /* 電腦版，跟你 logo 大小完美匹配 */
+}
+
+
 
 /* 玻璃擬態 */
 .glass {
