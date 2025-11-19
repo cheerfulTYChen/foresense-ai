@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>夆泩數位發展 ForeSense Tech</title>
+    <title>夆泩數位發展 ForeSence Tech</title>
 
-    <!-- Tailwind CDN -->
+    <!-- Tailwind CDN（保留超方便的 utility） -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Fonts -->
@@ -29,28 +29,28 @@
 
     <!-- 這裡放你原本的 <nav>、<header>、所有 <section> -->
     <!-- Navbar -->
-    <!-- 1. Header -->
+    <!-- 1. Header：砍掉多餘內距 + 把公司名稱移回左邊 -->
     <nav class="fixed top-0 left-0 right-0 w-full z-50 
                 glass backdrop-blur-xl bg-slate-900/95 border-b border-cyan-500/40 
                 py-2 md:py-3 shadow-2xl">
         <div class="container mx-auto px-6 flex justify-between items-center">
             
-            <!-- 左邊：logo + 公司名稱 -->
+            <!-- 左邊：logo + 公司名稱（尺寸剛好又霸氣） -->
             <div class="flex items-center gap-4 md:gap-6">
                 <img src="images/logo-white-blank.png" 
-                    alt="ForeSense Logo" 
+                    alt="ForeSence Logo" 
                     class="w-48 h-48 md:w-52 md:h-52 lg:w-68 lg:h-68 object-contain drop-shadow-2xl">
             </div>
 
-            <!-- 右邊選單 -->
+            <!-- 右邊選單（你原本的） -->
             <div class="hidden lg:flex items-center gap-8 text-lg">
                 <a href="#" class="text-2xl md:text-3xl lg:text-4xl font-black gradient-text tracking-tight leading-none">ForeSense</a>
-                <a href="#coating-challenges" class="hover:text-cyan-400 transition">產業痛點</a>
-                <a href="#ai-advisor" class="hover:text-cyan-400 transition">AI 工程師</a>
-                <a href="#service-section" class="hover:text-cyan-400 transition">服務項目</a>
-                <a href="#industry-applications-section" class="hover:text-cyan-400 transition">產業應用</a>
-                <a href="#about-section" class="hover:text-cyan-400 transition">關於我們</a>
-                <a href="#contact-section" class="hover:text-cyan-400 transition">聯絡我們</a>
+                <a href="#coating-challenges" class="hover:text-cyan-400 transition" data-i18n="nav_challenges">產業痛點</a>
+                <a href="#ai-advisor" class="hover:text-cyan-400 transition" data-i18n="nav_ai_advisor">AI 工程師</a>
+                <a href="#service-section" class="hover:text-cyan-400 transition" data-i18n="nav_service">服務項目</a>
+                <a href="#industry-applications-section" class="hover:text-cyan-400 transition" data-i18n="nav_industry">產業應用</a>
+                <a href="#about-section" class="hover:text-cyan-400 transition" data-i18n="nav_about">關於我們</a>
+                <a href="#contact-section" class="hover:text-cyan-400 transition" data-i18n="nav_contact">聯絡我們</a>
                 <div class="ml-8 flex gap-2">
                     <button class="px-4 py-2 bg-cyan-500/20 border border-cyan-500 rounded-full lang-switch" data-lang="zh-TW">繁體中文</button>
                     <button class="px-4 py-2 bg-white/10 rounded-full lang-switch" data-lang="en">English</button>
@@ -60,28 +60,29 @@
         </div>
     </nav>
 
-    <!-- 2. 產業痛點區塊 -->
+    <!-- 2. 產業痛點區塊：改用 pt 固定內距，不用 vh（這才是關鍵！） -->
     <section id="coating-challenges" class="mt-36 md:mt-48 lg:mt-56 relative overflow-hidden">
-        <!-- 背景光暈） -->
+        <!-- 背景光暈（保留你喜歡的） -->
         <div class="absolute inset-0 -z-10">
             <div class="absolute top-10 left-1/2 -translate-x-1/2 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"></div>
             <div class="absolute bottom-10 right-1/4 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl"></div>
         </div>
 
         <div class="container mx-auto px-6 relative z-10">
-            <h2 class="text-5xl md:text-7xl font-black text-center mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            <h2 class="text-5xl md:text-7xl font-black text-center mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent" data-i18n="coating_challenges_title">
                 生產製造都會面臨的挑戰
             </h2>
-            <p class="text-center text-xl md:text-2xl text-cyan-300/80 mb-16 max-w-4xl mx-auto">
+            <p class="text-center text-xl md:text-2xl text-cyan-300/80 mb-16 max-w-4xl mx-auto" data-i18n="coating_challenges_subtitle">
                 這些痛點不僅直接影響生產效率,更蠶食著您的利潤空間
             </p>
 
-            <!-- 四張卡片 -->
+            <!-- 你的四張卡片保持不變 -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- 卡片 1 -->
                 <div class="group relative">
                     <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-3xl blur-lg opacity-60 group-hover:opacity-100 transition duration-500"></div>
-                    <div class="relative glass rounded-3xl p-8 text-center transform transition-all duration-500 hover:-translate-y-6 hover:shadow-2xl border border-white/10">
+                    <div class="relative glass rounded-3xl p-8 text-center border border-white/10
+                    flex flex-col h-full ">
                         <div class="mb-6 flex justify-center">
                             <img src="images/challenge-yield.png" alt="不穩定的產品良率" class="w-32 h-32 object-contain drop-shadow-2xl">
                         </div>
@@ -99,7 +100,8 @@
                 <!-- 卡片 2 -->
                 <div class="group relative">
                     <div class="absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-600 rounded-3xl blur-lg opacity-60 group-hover:opacity-100 transition duration-500"></div>
-                    <div class="relative glass rounded-3xl p-8 text-center transform transition-all duration-500 hover:-translate-y-6 hover:shadow-2xl border border-white/10">
+                    <div class="relative glass rounded-3xl p-8 text-center border border-white/10
+                    flex flex-col h-full ">
                         <div class="mb-6 flex justify-center">
                             <img src="images/challenge-equip.png" alt="突發的設備故障" class="w-32 h-32 object-contain drop-shadow-2xl">
                         </div>
@@ -117,7 +119,8 @@
                 <!-- 卡片 3 -->
                 <div class="group relative">
                     <div class="absolute -inset-1 bg-gradient-to-r from-orange-500 to-red-600 rounded-3xl blur-lg opacity-60 group-hover:opacity-100 transition duration-500"></div>
-                    <div class="relative glass rounded-3xl p-8 text-center transform transition-all duration-500 hover:-translate-y-6 hover:shadow-2xl border border-white/10">
+                    <div class="relative glass rounded-3xl p-8 text-center border border-white/10
+                    flex flex-col h-full">
                         <div class="mb-6 flex justify-center">
                             <img src="images/challenge-cost.png" alt="持續攀升的營運成本" class="w-32 h-32 object-contain drop-shadow-2xl">
                         </div>
@@ -135,7 +138,8 @@
                 <!-- 卡片 4 -->
                 <div class="group relative">
                     <div class="absolute -inset-1 bg-gradient-to-r from-green-500 to-teal-600 rounded-3xl blur-lg opacity-60 group-hover:opacity-100 transition duration-500"></div>
-                    <div class="relative glass rounded-3xl p-8 text-center transform transition-all duration-500 hover:-translate-y-6 hover:shadow-2xl border border-white/10">
+                    <div class="relative glass rounded-3xl p-8 text-center border border-white/10
+                    flex flex-col h-full ">
                         <div class="mb-6 flex justify-center">
                             <img src="images/challenge-expert.png" alt="老師傅的經驗斷層" class="w-32 h-32 object-contain drop-shadow-2xl">
                         </div>
@@ -153,25 +157,8 @@
         </div>
     </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- AI 三大核心價值（使用交錯動畫 + 數據跳動） -->
-    <!-- 1. 專屬的製程 AI 工程師（三大核心價值）科技版 -->
+    <!-- AI 三大核心價值 -->
+    <!-- 1. 專屬的製程 AI 工程師（三大核心價值）-->
     <section class="relative py-24 overflow-hidden" id="ai-advisor">
         <!-- 背景光暈裝飾 -->
         <div class="absolute inset-0 pointer-events-none opacity-50">
@@ -323,13 +310,12 @@
         </div>
     </section>
 
-    <!-- 2. 服務項目 - 高科技卡片版 -->
+    <!-- 2. 服務項目-->
     <section class="py-24" id="service-section">
         <div class="container mx-auto px-6">
             <h2 class="text-5xl md:text-7xl font-black text-center mb-20 bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent"
                 data-i18n="service">服務項目</h2>
 
-            <!-- 外層改成 grid + 固定高度卡片 -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                 <!-- 服務 1 -->
                 <div class="group relative h-full">
@@ -383,7 +369,7 @@
     </section>
 
 
-    <!-- 產業應用 - 極致科技感版 -->
+    <!-- 產業應用 -->
     <section id="industry-applications-section" class="relative py-32 overflow-hidden">
         <!-- 背景光暈裝飾 -->
         <div class="absolute inset-0 pointer-events-none opacity-60">
@@ -586,7 +572,7 @@
         </div>
     </section>
 
-    <!-- 關於我們 - 極致科技感版 -->
+    <!-- 關於我們 -->
     <section id="about-section" class="relative py-32 overflow-hidden">
         <!-- 背景光暈 -->
         <div class="absolute inset-0 pointer-events-none opacity-50">
@@ -666,7 +652,7 @@
         </div>
     </section>
 
-    <!-- 聯絡我們 - 科技感版 -->
+    <!-- 聯絡我們 -->
     <section id="contact-section" class="relative py-32 overflow-hidden">
         <div class="absolute inset-0 pointer-events-none opacity-40">
             <div |class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-radial from-cyan-500/20 to-transparent blur-3xl"></div>
@@ -698,7 +684,7 @@
                             <span class="text-cyan-400">✉</span>
                             <div>
                                 <strong data-i18n="email_label">Email：</strong>
-                                <span data-i18n="email">info@forsence.com</span>
+                                <span data-i18n="email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ea83848c85aa8c8598998f84898fc4898587">[email&#160;protected]</a></span>
                             </div>
                         </li>
                         <li class="flex items-center gap-5">
@@ -727,34 +713,13 @@
     </section>
 
 
-
-
-    <!-- 全部都只用 class，不用內嵌 style -->
-
-    <!-- 範例：放你剛剛最後改好的「關於我們」與「聯絡我們」 -->
-    <!--（直接把上一則回覆的兩個 <section> 貼進來即可）-->
-
     <!-- Footer -->
     <footer class="glass py-16 text-center border-t border-white/10 mt-40">
         <p class="text-xl" data-i18n="footer">版權所有 © 2025 夆泩數位發展 ForeSence Tech</p>
     </footer>
 
     <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/main.js"></script>
     <!-- 強制用完整路徑 + 加上 ?v=1 破快取 -->
     <script src="js/main.js?v=2025"></script>
-    
-    <!-- 測試用：看 main.js 有沒有真的載入 -->
-    <script>
-        console.log("index.html 已載入完畢");
-        if (typeof translate === 'undefined') {
-        console.error("✗ main.js 沒載入！i18n 無法運作");
-        } else {
-        console.log("✓ main.js 載入成功！i18n 正常");
-        }
-    </script>
-</body>
-</html>
-
-
