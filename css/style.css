@@ -109,40 +109,39 @@ body { font-family: 'Inter', 'Noto Sans TC', sans-serif; }
 
 
 
-
-
-
-
-
-.benefit-box-horizontal {
-    @apply rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10;
-    padding: 2rem 1.5rem;
-    height: 160px;                        /* 高度固定 */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transition: all 0.4s ease;
-    overflow: hidden;
-}
-
-.benefit-number {
-    font-weight: 900;
-    line-height: 1;
-    /* 關鍵：用 text-balance + 自動縮小 */
-    font-size: 4rem;                      /* 基礎大小 */
-    font-size: clamp(2.5rem, 7vw, 4rem);  /* 自動縮小，永遠 fit */
-    white-space: nowrap;
-}
-
-.benefit-label {
-    @apply mt-3 text-lg font-medium opacity-90;
-}
-
 /* 懸浮特效 */
 .benefit-box-horizontal:hover {
     transform: translateY(-16px);
     box-shadow: 0 30px 60px rgba(0, 224, 255, 0.3);
     border-color: #00e0ff;
+}
+/* 導航欄樣式優化 - 確保英文也不會換行 */
+nav .hidden.lg\:flex {
+    gap: 1.5rem; /* 稍微縮小間距 */
+}
+
+nav .hidden.lg\:flex a:not(.gradient-text) {
+    white-space: nowrap;
+    font-size: 0.95rem; /* 稍微縮小以容納英文 */
+    line-height: 1.2;
+}
+
+/* 在更大的螢幕上可以稍微放大 */
+@media (min-width: 1280px) {
+    nav .hidden.lg\:flex {
+        gap: 1.75rem;
+    }
+    nav .hidden.lg\:flex a:not(.gradient-text) {
+        font-size: 1rem;
+    }
+}
+
+/* 在超大螢幕上恢復原始大小 */
+@media (min-width: 1536px) {
+    nav .hidden.lg\:flex {
+        gap: 2rem;
+    }
+    nav .hidden.lg\:flex a:not(.gradient-text) {
+        font-size: 1.125rem;
+    }
 }
