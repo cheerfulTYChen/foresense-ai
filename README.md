@@ -1,1 +1,1 @@
-# foresence-ai
+# foresense-ai
