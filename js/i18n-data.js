@@ -88,14 +88,14 @@ window.i18nData = {
         'about_point3_value2': '100%',
         'about_point3_label2': '創新精神',
         'address_label': '地址:',
-        'address': '新竹縣竹北市光明一路349號',
+        'address': '新竹科學園區新竹市東區力行一路1號1樓 (A2-A12-10)',
         'phone_label': '電話:',
         'phone': '0921-353124、0911-843839',
         'email_label': 'Email:',
         'email': 'foresense0729@gmail.com',
         'service_time_label': '服務時間:',
         'service_time': '週一至週五 9:00-18:00',
-        'footer': '版權所有 © 2025 夆泩數位發展',
+        'footer': '版權所有 © 2026 夆泩數位發展',
 
         // 產業應用場景 (Industry Applications) 新增的鍵值對
         'industry_applications_title': '深入各產業的智慧製程解決方案',
@@ -242,14 +242,14 @@ window.i18nData = {
         'about_point3_value2': '100%',
         'about_point3_label2': 'Innovation Spirit',
         'address_label': 'Address:',
-        'address': '349 Guangming 1st Rd., Zhubei City, Hsinchu County',
+        'address': '300, Taiwán, Hsinchu City, East District, Li Hsin 1st Rd, No. 1, 1F (A2-A12-10)',
         'phone_label': 'Phone:',
         'phone': '(+886)921-353124、(+886)911-843839',
         'email_label': 'Email:',
         'email': 'foresense0729@gmail.com',
         'service_time_label': 'Service Time:',
         'service_time': 'Mon-Fri 9:00-18:00',
-        'footer': 'Copyright © 2025 ForeSense Tech',
+        'footer': 'Copyright © 2026 ForeSense Tech',
 
         // 產業應用場景 (Industry Applications) 新增的鍵值對
         'industry_applications_title': 'Smart Process Solutions Across Industries',
