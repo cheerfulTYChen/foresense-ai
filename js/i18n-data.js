@@ -151,7 +151,14 @@ window.i18nData = {
         'ia_tool_benefit2_label': '壽命延長',
         'ia_tool_benefit3': '40%',
         'ia_tool_benefit3_label': '一致性提升',
-        'ia_tool_benefit4': '新人培訓時間縮短：從 6 個月到 2 個月'
+        'ia_tool_benefit4': '新人培訓時間縮短：從 6 個月到 2 個月',
+
+        // 獲獎肯定
+        'about_award_badge': '創業大聯盟競賽',
+        'about_award_title': '綻放獎',
+        'about_award_desc': '榮獲「2026 創業綻放－創業大聯盟競賽」全國百強企業殊榮，由國家發展委員會頒發。以卓越的創新實力與發展潛力，自全國眾多團隊中脫穎而出，獲評為臺灣新創典範。',
+        'about_award_issuer': '國家發展委員會',
+        'about_award_date': '中華民國 115 年 5 月 27 日'
     },
     'en': {
         // Navigation Bar
@@ -305,6 +312,13 @@ window.i18nData = {
         'ia_tool_benefit2_label': 'Tool Lifespan Extension',
         'ia_tool_benefit3': '40%',
         'ia_tool_benefit3_label': 'Batch Consistency Improvement',
-        'ia_tool_benefit4': 'New Staff Training Time Shortened: From 6 months to 2 months'
+        'ia_tool_benefit4': 'New Staff Training Time Shortened: From 6 months to 2 months',
+
+        // Awards & Recognition
+        'about_award_badge': 'Startup Grand League Competition',
+        'about_award_title': 'Bloom Award',
+        'about_award_desc': 'Honored with the Top 100 Enterprise award at the "2026 Startup Bloom — Startup Grand League Competition," presented by the National Development Council. Selected from teams nationwide for outstanding innovation and growth potential, recognized as a model new venture in Taiwan.',
+        'about_award_issuer': 'National Development Council',
+        'about_award_date': 'May 27, 2026'
     }
 };
