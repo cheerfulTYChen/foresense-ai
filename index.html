@@ -718,6 +718,131 @@
         </div>
     </section>
 
+    <!-- 實績案例 -->
+    <section id="cases-section" class="relative py-32 overflow-hidden">
+        <!-- 背景光暈 -->
+        <div class="absolute inset-0 pointer-events-none opacity-50">
+            <div class="absolute top-20 right-10 w-96 h-96 bg-cyan-600/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 left-10 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-5xl md:text-8xl font-black text-center mb-8 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"
+                data-i18n="cases_title">實績案例</h2>
+            <p class="text-center text-xl md:text-3xl text-cyan-300/80 mb-20 max-w-5xl mx-auto copy-max"
+                data-i18n="cases_subtitle">真實數據驗證，AI 解決方案帶來的具體效益</p>
+
+            <!-- 三張案例卡片 -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-20">
+
+                <!-- 案例 1：光學CVD -->
+                <div class="group relative flex flex-col">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-3xl blur-lg opacity-50 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="relative glass rounded-3xl overflow-hidden border border-white/10 flex flex-col h-full">
+                        <!-- 圖片 -->
+                        <div class="relative h-72 overflow-hidden flex-shrink-0 bg-black/60 flex items-center justify-center">
+                            <img src="images/case-optical.jpg" alt="光學CVD鍍膜" class="w-full h-full object-contain transition duration-500 group-hover:scale-105">
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-sm font-bold bg-cyan-500/80 backdrop-blur-sm text-white" data-i18n="case1_tag">節能專案</span>
+                        </div>
+                        <!-- 內容 -->
+                        <div class="p-8 flex flex-col flex-1">
+                            <h3 class="text-2xl font-black text-cyan-300 mb-6" data-i18n="case1_title">光學CVD鍍膜參數優化</h3>
+                            <div class="grid grid-cols-3 gap-3 mb-6">
+                                <div class="p-3 rounded-2xl bg-white/5 border border-cyan-500/30 text-center">
+                                    <div class="text-2xl font-black text-green-400">12%↓</div>
+                                    <div class="text-xs text-cyan-300 mt-1" data-i18n="case1_m1">能源消耗</div>
+                                </div>
+                                <div class="p-3 rounded-2xl bg-white/5 border border-cyan-500/30 text-center">
+                                    <div class="text-2xl font-black text-green-400">50%↓</div>
+                                    <div class="text-xs text-cyan-300 mt-1" data-i18n="case1_m2">調試時間</div>
+                                </div>
+                                <div class="p-3 rounded-2xl bg-white/5 border border-cyan-500/30 text-center">
+                                    <div class="text-2xl font-black text-green-400" data-i18n="case1_m3_val">150萬</div>
+                                    <div class="text-xs text-cyan-300 mt-1" data-i18n="case1_m3">成本節省</div>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 text-sm leading-relaxed flex-1" data-i18n="case1_desc">導入 AI 演算法自動優化鍍膜製程參數，有效降低能耗與調試成本，客戶已規劃將解決方案擴散導入其他設備產線。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 案例 2：刀具PVD -->
+                <div class="group relative flex flex-col">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-orange-500 to-red-600 rounded-3xl blur-lg opacity-50 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="relative glass rounded-3xl overflow-hidden border border-white/10 flex flex-col h-full">
+                        <!-- 圖片 -->
+                        <div class="relative h-72 overflow-hidden flex-shrink-0 bg-black/60 flex items-center justify-center">
+                            <img src="images/case-tool.jpg" alt="刀具PVD鍍膜" class="w-full h-full object-contain transition duration-500 group-hover:scale-105">
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-sm font-bold bg-orange-500/80 backdrop-blur-sm text-white" data-i18n="case2_tag">危機轉機</span>
+                        </div>
+                        <!-- 內容 -->
+                        <div class="p-8 flex flex-col flex-1">
+                            <h3 class="text-2xl font-black text-orange-300 mb-6" data-i18n="case2_title">刀具PVD鍍膜產品開發</h3>
+                            <div class="grid grid-cols-3 gap-3 mb-6">
+                                <div class="p-3 rounded-2xl bg-white/5 border border-orange-500/30 text-center">
+                                    <div class="text-2xl font-black text-green-400">53%↑</div>
+                                    <div class="text-xs text-orange-300 mt-1" data-i18n="case2_m1">鍍膜硬度</div>
+                                </div>
+                                <div class="p-3 rounded-2xl bg-white/5 border border-orange-500/30 text-center">
+                                    <div class="text-2xl font-black text-green-400">50%↓</div>
+                                    <div class="text-xs text-orange-300 mt-1" data-i18n="case2_m2">開發時程</div>
+                                </div>
+                                <div class="p-3 rounded-2xl bg-white/5 border border-orange-500/30 text-center">
+                                    <div class="text-2xl font-black text-green-400" data-i18n="case2_m3_val">100萬</div>
+                                    <div class="text-xs text-orange-300 mt-1" data-i18n="case2_m3">成本節省</div>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 text-sm leading-relaxed flex-1" data-i18n="case2_desc">面對產品品質不穩定與掉單危機，透過 AI 多目標參數優化大幅提升鍍膜硬度與批次一致性，成功扭轉局面，客戶已轉為正式付費合作。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 案例 3：TGV -->
+                <div class="group relative flex flex-col">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-600 rounded-3xl blur-lg opacity-50 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="relative glass rounded-3xl overflow-hidden border border-white/10 flex flex-col h-full">
+                        <!-- 圖片 -->
+                        <div class="relative h-72 overflow-hidden flex-shrink-0 bg-black/60 flex items-center justify-center">
+                            <img src="images/case-tgv.jpg" alt="半導體TGV濺鍍" class="w-full h-full object-contain transition duration-500 group-hover:scale-105">
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-sm font-bold bg-purple-500/80 backdrop-blur-sm text-white" data-i18n="case3_tag">半導體製程</span>
+                            <!-- 深寬比 highlight badge -->
+                            <div class="absolute bottom-4 right-4 px-3 py-2 rounded-xl bg-black/70 backdrop-blur-sm border border-purple-400/70 text-center">
+                                <div class="text-xl font-black text-purple-200">10 : 1</div>
+                                <div class="text-xs text-purple-400" data-i18n="case3_ratio_label">深寬比</div>
+                            </div>
+                        </div>
+                        <!-- 內容 -->
+                        <div class="p-8 flex flex-col flex-1">
+                            <h3 class="text-2xl font-black text-purple-300 mb-6" data-i18n="case3_title">半導體 TGV 濺鍍參數優化</h3>
+                            <div class="grid grid-cols-3 gap-3 mb-6">
+                                <div class="p-3 rounded-2xl bg-white/5 border border-purple-500/30 text-center">
+                                    <div class="text-xl font-black text-purple-300">10:1</div>
+                                    <div class="text-xs text-purple-300 mt-1" data-i18n="case3_m1">深寬比</div>
+                                </div>
+                                <div class="p-3 rounded-2xl bg-white/5 border border-purple-500/30 text-center">
+                                    <div class="text-xl font-black text-purple-300">&gt;100nm</div>
+                                    <div class="text-xs text-purple-300 mt-1" data-i18n="case3_m2">Min THK</div>
+                                </div>
+                                <div class="p-3 rounded-2xl bg-white/5 border border-purple-500/30 text-center">
+                                    <div class="text-xl font-black text-purple-300">&gt;80%</div>
+                                    <div class="text-xs text-purple-300 mt-1" data-i18n="case3_m3">調試準確率</div>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 text-sm leading-relaxed flex-1" data-i18n="case3_desc">運用 AI 多目標決策演算法，針對深寬比 10:1 的 TGV 次世代先進封裝製程，實現種子層均勻覆蓋達量產規格，通過 Tier-1 企業打樣認證。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 底部：核心效能 highlight -->
+            <div class="glass rounded-3xl p-10 md:p-14 border border-cyan-500/20 text-center">
+                <p class="text-xl text-gray-400 mb-4 tracking-widest uppercase" data-i18n="cases_highlight_label">核心效能 — 製程參數調試準確率</p>
+                <div class="text-7xl md:text-9xl font-black bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">&gt;80%</div>
+                <p class="text-lg md:text-xl text-cyan-300/80 mt-6 max-w-3xl mx-auto" data-i18n="cases_highlight_desc">相較傳統統計分析大幅提升，印證專業知識結合 AI 的絕對優勢</p>
+            </div>
+        </div>
+    </section>
+
     <!-- 關於我們 - 極致科技感版 -->
     <section id="about-section" class="relative py-32 overflow-hidden">
         <!-- 背景光暈 -->
@@ -784,7 +909,7 @@
                     <p class="text-lg leading-relaxed text-gray-200 mb-10" data-i18n="about_point3"></p>
                     <div class="grid grid-cols-2 gap-10 text-center">
                         <div class="p-6 rounded-2xl bg-white/5 border border-orange-500/30">
-                            <div class="text-7xl font-black text-orange-400" data-i18n="about_point3_value1">2</div>
+                            <div class="text-7xl font-black text-orange-400" data-i18n="about_point3_value1">3</div>
                             <div class="text-xl text-orange-300 mt-3" data-i18n="about_point3_label1">創業競賽獲獎</div>
                         </div>
                         <div class="p-6 rounded-2xl bg-white/5 border border-red-500/30">
