@@ -269,6 +269,10 @@ html {
     filter: drop-shadow(0 0 30px #34d399);
 }
 
+.drop-shadow-glow-yellow {
+    filter: drop-shadow(0 0 15px #fbbf24);
+}
+
 
 
 .ia-card-left {
