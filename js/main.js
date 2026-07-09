@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const i18n = window.i18nData;
     const metaCopy = {
         'zh-TW': {
-            title: 'ForeSense Tech｜AI 製程優化與品質監控',
-            description: 'ForeSense Tech 提供 AI 製程優化、品質監控、知識庫數位化與參數建議，協助製造業提升良率、降低成本、縮短開發週期。',
+            title: '夆泩數位發展 ForeSense Tech｜AI 製程優化與品質監控',
+            description: '夆泩數位發展（ForeSense Tech）提供 AI 製程優化、品質監控、知識庫數位化與參數建議，協助製造業提升良率、降低成本、縮短開發週期。',
             locale: 'zh_TW'
         },
         'en': {
